@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ImageClassifier } from '@/components/ai/ImageClassifier';
@@ -7,6 +7,12 @@ import { TextSummarizer } from '@/components/ai/TextSummarizer';
 import { Brain, Sparkles, Zap, Github } from 'lucide-react';
 
 const Index = () => {
+  const demosRef = useRef<HTMLDivElement>(null);
+
+  const scrollToDemos = () => {
+    demosRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
@@ -19,14 +25,21 @@ const Index = () => {
                 AI Showcase
               </span>
             </div>
-            <div className="flex items-center gap-4">
-              <Badge variant="outline" className="hidden sm:inline-flex">
-                Powered by Transformers.js
-              </Badge>
-              <Button variant="outline" size="sm">
-                <Github className="w-4 h-4" />
-              </Button>
-            </div>
+        <div className="flex items-center gap-4">
+  <Badge variant="outline" className="hidden sm:inline-flex">
+    Developer
+  </Badge>
+  <a
+    href="https://github.com/yadavsharn"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Button variant="outline" size="sm">
+      <Github className="w-4 h-4" />
+    </Button>
+  </a>
+</div>
+
           </div>
         </div>
       </nav>
@@ -50,7 +63,7 @@ const Index = () => {
               directly in your browser with cutting-edge AI models.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-              <Button variant="hero" size="lg" className="group">
+              <Button variant="hero" size="lg" className="group" onClick={scrollToDemos}>
                 <Zap className="w-5 h-5 mr-2 group-hover:animate-pulse" />
                 Try the Demos Below
               </Button>
@@ -63,7 +76,7 @@ const Index = () => {
       </section>
 
       {/* AI Demos Section */}
-      <section className="py-20 px-4">
+      <section ref={demosRef} className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -76,12 +89,12 @@ const Index = () => {
           </div>
 
           <div className="grid lg:grid-cols-1 xl:grid-cols-2 gap-8 max-w-7xl mx-auto">
-            {/* Image Classifier - Full width on mobile and large screens */}
+            {/* Image Classifier */}
             <div className="xl:col-span-2">
               <ImageClassifier />
             </div>
 
-            {/* Sentiment Analyzer and Text Summarizer side by side */}
+            {/* Sentiment Analyzer and Text Summarizer */}
             <div className="space-y-8 xl:space-y-0">
               <SentimentAnalyzer />
             </div>
@@ -143,7 +156,7 @@ const Index = () => {
             <span className="text-lg font-semibold">AI Showcase</span>
           </div>
           <p className="text-muted-foreground">
-            Built with Transformers.js • Running AI models directly in your browser
+            Running AI models directly in your browser
           </p>
         </div>
       </footer>
