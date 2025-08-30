@@ -61,7 +61,8 @@ Now open http://localhost:5173
  in your browser.
 ```
 
-###🌍 Deployment
+## 🌍 Deployment
+```
 You can deploy this project easily on:
 
 Vercel
@@ -76,15 +77,19 @@ npm run build
 
 
 Output directory: dist/
+```
+## 📌 Project Info
 
-###📌 Project Info
-
+```
 GitHub Repository: ModelHub-AthenaEducation
 
 Author: Shantanu Yadav
+```
 
-###📜 License
+## 📜 License
 
+```
 This project is licensed under the MIT License.
 
 
+```
