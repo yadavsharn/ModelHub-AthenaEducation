@@ -59,7 +59,7 @@ npm run dev
 
 Now open http://localhost:5173
  in your browser.
-
+```
 
 ###🌍 Deployment
 You can deploy this project easily on:
