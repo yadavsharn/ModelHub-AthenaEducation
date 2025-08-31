@@ -88,3 +88,41 @@ Author: Shantanu Yadav
 This project is licensed under the MIT License.
 
 
+
+
+Now open http://localhost:5173
+ in your browser.
+```
+
+## 🌍 Deployment
+```
+You can deploy this project easily on:
+
+Vercel
+
+Netlify
+
+Any static hosting service supporting Vite builds
+
+Build command:
+
+npm run build
+
+
+Output directory: dist/
+```
+## 📌 Project Info
+
+```
+GitHub Repository: ModelHub-AthenaEducation
+
+Author: Shantanu Yadav
+```
+
+## 📜 License
+
+```
+This project is licensed under the MIT License.
+
+
+```
